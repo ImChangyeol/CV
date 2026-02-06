@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Changyeol Im - Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -120,31 +120,67 @@
         }
 
         .hero-container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 2rem;
             align-items: center;
             position: relative;
             z-index: 1;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
+        .hero-title {
+            margin-bottom: 0rem;
+            padding-bottom: 0rem;
+            line-height: 0.8;
+        }
+
+        .big-text {
+            display: block;
+            font-size: 15rem;
+            font-weight: 900;
+            line-height: 0.8;
             background: var(--gradient-2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -0.02em;
+            margin-bottom: -0.1rem;
+        }
+
+        .chang-text {
+            display: block;
+            font-size: 7rem;
+            font-weight: 900;
+            line-height: 0.8;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.01em;
+            margin-bottom: -0.05rem;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .hero-content .subtitle {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #000000 0%, #9D7E00 50%, #000000 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            padding-bottom: 0.2rem;
+            margin-top: -0.05rem;
         }
 
         .hero-content .description {
@@ -205,9 +241,9 @@
 
         .profile-card {
             background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -224,23 +260,24 @@
         }
 
         .profile-img {
-            width: 200px;
-            height: 200px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             border: 4px solid var(--border-color);
         }
 
         .profile-info h3 {
-            font-size: 1.5rem;
+            font-size: 2rem;
             margin-bottom: 0.5rem;
             color: var(--text-primary);
         }
 
         .profile-info .title {
             color: var(--text-secondary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
         }
 
         .social-links {
@@ -251,8 +288,8 @@
         }
 
         .social-links a {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background: var(--bg-secondary);
             display: flex;
@@ -290,9 +327,81 @@
 
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 3rem;
-            align-items: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--bg-secondary);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
         }
 
         .about-text {
@@ -436,17 +545,26 @@
         }
 
         .glass-card {
-            background: white;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
             padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
+            border-radius: 24px;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.08),
+                0 0 0 1px rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .glass-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 24px 24px 0 0;
         }
 
         .text-center {
@@ -476,37 +594,31 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 1rem 2rem;
-            border-radius: 8px;
+            padding: 1.25rem 2.5rem;
+            border-radius: 12px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s ease;
             cursor: pointer;
             border: none;
-            min-width: 200px;
+            min-width: 220px;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-primary {
-            background: var(--gradient-2);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             color: white;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+            box-shadow: 
+                0 8px 25px rgba(37, 99, 235, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
         }
 
         .btn-secondary {
-            background: transparent;
+            background: rgba(255, 255, 255, 0.9);
             color: var(--primary-color);
             border: 2px solid var(--primary-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
+            backdrop-filter: blur(10px);
         }
 
         .w-5 {
@@ -523,29 +635,36 @@
 
         .resume-preview-container {
             display: none;
-            animation: fadeIn 0.3s ease;
         }
 
         .preview-wrapper {
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            border-radius: 16px;
             overflow: hidden;
-            background: var(--bg-primary);
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
             height: 700px;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            position: relative;
+        }
+
+        .preview-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            opacity: 0.8;
         }
 
         .resume-iframe {
             width: 100%;
             height: 100%;
             border: none;
-        }
-
-        .preview-note {
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            font-style: italic;
+            background: white;
         }
 
         @keyframes fadeIn {
@@ -654,28 +773,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .resume-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .timeline::before {
-                left: 30px;
-            }
-
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                text-align: left;
-                padding-left: 60px;
-                padding-right: 0;
-            }
-
-            .timeline-dot {
-                left: 30px;
-            }
-
-            .cta-buttons {
-                justify-content: center;
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -708,11 +807,10 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">YourName.dev</div>
+            <div class="logo">BIGCHANG</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -724,13 +822,11 @@
         <div class="tech-grid"></div>
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Hi, I'm Your Name</h1>
-                <p class="subtitle">Full Stack Developer & Problem Solver</p>
-                <p class="description">
-                    Passionate about creating elegant solutions to complex problems. 
-                    I specialize in building scalable web applications and turning ideas 
-                    into reality through clean, efficient code.
-                </p>
+                <div class="hero-title">
+                    <span class="big-text">BIG</span>
+                    <span class="chang-text">CHANG</span>
+                </div>
+                <p class="subtitle">Purdue University Data Science 2027</p>
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary">
                         <span>Get In Touch</span>
@@ -746,8 +842,8 @@
                 <div class="profile-card">
                     <img src="https://www.dropbox.com/scl/fi/v3wcb6dbnolvvvnswvj82/Profiel.jpg?rlkey=g1smjz9s5f1uokieqkxamk8ak&st=x5a164wz&raw=1" alt="Profile Photo" class="profile-img">
                     <div class="profile-info">
-                        <h3>Your Name</h3>
-                        <p class="title">Software Engineer</p>
+                        <h3>Changyeol Im</h3>
+                        <p class="title">Data Scientist</p>
                         <div class="social-links">
                             <a href="#" title="GitHub">
                                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -776,92 +872,61 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I'm a passionate software developer with a strong foundation in computer science 
-                        and a keen eye for detail. My journey in tech began with a curiosity about how 
-                        things work, which evolved into a career dedicated to building innovative solutions.
-                    </p>
-                    <p>
-                        With experience across the full stack, I enjoy tackling complex challenges and 
-                        turning them into elegant, user-friendly applications. I believe in writing clean, 
-                        maintainable code and staying current with emerging technologies.
-                    </p>
-                    <p>
-                        When I'm not coding, you can find me exploring new technologies, contributing to 
-                        open-source projects, or sharing knowledge with the developer community.
-                    </p>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-icon">⚛️</div>
-                        <div class="skill-name">React</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">🐍</div>
-                        <div class="skill-name">Python</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">🟢</div>
-                        <div class="skill-name">Node.js</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">🗄️</div>
-                        <div class="skill-name">SQL</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">☁️</div>
-                        <div class="skill-name">AWS</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">🐳</div>
-                        <div class="skill-name">Docker</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2023 - Present</div>
-                        <div class="timeline-title">Senior Software Engineer</div>
-                        <div class="timeline-company">Tech Company Inc.</div>
-                        <div class="timeline-description">
-                            Leading development of microservices architecture, improving system performance 
-                            by 40%. Mentoring junior developers and implementing best practices for code quality 
-                            and deployment strategies.
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/2563eb/ffffff?text=Project+1" alt="Project 1">
+                        </div>
+                        <div class="project-content">
+                            <h3>Machine Learning Project</h3>
+                            <p>Developed predictive models for business analytics using advanced ML algorithms.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">TensorFlow</span>
+                                <span class="tag">Data Analysis</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2021 - 2023</div>
-                        <div class="timeline-title">Full Stack Developer</div>
-                        <div class="timeline-company">Digital Solutions Ltd.</div>
-                        <div class="timeline-description">
-                            Developed and maintained multiple web applications using React and Node.js. 
-                            Collaborated with cross-functional teams to deliver features that increased 
-                            user engagement by 25%.
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/2563eb/ffffff?text=Project+2" alt="Project 2">
+                        </div>
+                        <div class="project-content">
+                            <h3>Data Visualization Dashboard</h3>
+                            <p>Created interactive dashboards for real-time data monitoring and insights.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">D3.js</span>
+                                <span class="tag">SQL</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2020 - 2021</div>
-                        <div class="timeline-title">Junior Developer</div>
-                        <div class="timeline-company">StartUp Hub</div>
-                        <div class="timeline-description">
-                            Contributed to the development of a SaaS platform from scratch. Gained experience 
-                            in agile methodologies and modern web technologies while working in a fast-paced environment.
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/2563eb/ffffff?text=Project+3" alt="Project 3">
+                        </div>
+                        <div class="project-content">
+                            <h3>Statistical Analysis Research</h3>
+                            <p>Conducted comprehensive statistical analysis for academic research publication.</p>
+                            <div class="project-tags">
+                                <span class="tag">R</span>
+                                <span class="tag">Statistics</span>
+                                <span class="tag">Research</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/2563eb/ffffff?text=Project+4" alt="Project 4">
+                        </div>
+                        <div class="project-content">
+                            <h3>Cloud Data Pipeline</h3>
+                            <p>Built scalable data processing pipeline using cloud technologies.</p>
+                            <div class="project-tags">
+                                <span class="tag">AWS</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">ETL</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -876,10 +941,6 @@
 
             <div class="glass-card">
                 <div class="text-center mb-8">
-                    <p class="resume-description">
-                        Download my complete resume to learn more about my experience, education, and technical skills.
-                    </p>
-
                     <div class="resume-buttons">
                         <a href="CHANGYEOL IM Resume.pdf" 
                            download="CHANGYEOL IM Resume.pdf"
@@ -907,9 +968,6 @@
                                 title="Resume Preview">
                         </iframe>
                     </div>
-                    <p class="preview-note">
-                        <em>Preview may not display optimally on all devices. Download for best viewing experience.</em>
-                    </p>
                 </div>
             </div>
         </div>
@@ -919,7 +977,7 @@
     <section id="contact" class="contact">
         <div class="contact-container">
             <h2 class="section-title">Get In Touch</h2>
-            <form class="contact-form" id="contactForm">
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
@@ -927,10 +985,6 @@
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required>
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
@@ -947,7 +1001,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Your Name. All rights reserved. | Built with ❤️ and lots of ☕</p>
+            <p>&copy; 2026 BIGCHANG | I reserve my heart for those who reach out to me</p>
         </div>
     </footer>
 
@@ -966,19 +1020,7 @@
             });
         });
 
-        // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Here you would normally send the data to a server
-            // For now, we'll just show a success message
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
+        // Formspree will handle form submission automatically
 
         // Toggle resume preview
         function toggleResumePreview() {
@@ -988,10 +1030,6 @@
             if (preview.style.display === 'none' || !preview.style.display) {
                 preview.style.display = 'block';
                 buttonText.textContent = 'Hide Preview';
-                // Smooth scroll to preview
-                setTimeout(() => {
-                    preview.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }, 100);
             } else {
                 preview.style.display = 'none';
                 buttonText.textContent = 'Preview Resume';
@@ -1018,23 +1056,6 @@
             item.style.animationPlayState = 'paused';
             observer.observe(item);
         });
-
-        // Add typing effect to hero title
-        const heroTitle = document.querySelector('.hero-content h1');
-        const originalText = heroTitle.textContent;
-        heroTitle.textContent = '';
-        let charIndex = 0;
-
-        function typeWriter() {
-            if (charIndex < originalText.length) {
-                heroTitle.textContent += originalText.charAt(charIndex);
-                charIndex++;
-                setTimeout(typeWriter, 100);
-            }
-        }
-
-        // Start typing effect when page loads
-        window.addEventListener('load', typeWriter);
 
         // Removed parallax effect to prevent hero section from covering content
         // Resume functionality now uses direct links to PDF file
