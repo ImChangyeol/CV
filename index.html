@@ -431,48 +431,132 @@
         }
 
         .resume-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            text-align: center;
         }
 
-        .resume-upload {
+        .glass-card {
             background: white;
             padding: 3rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border: 2px dashed var(--border-color);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
             transition: all 0.3s ease;
         }
 
-        .resume-upload:hover {
-            border-color: var(--primary-color);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
 
-        .upload-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+        .text-center {
+            text-align: center;
         }
 
-        .upload-text {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
+        .mb-8 {
             margin-bottom: 2rem;
         }
 
-        .resume-preview {
-            margin-top: 2rem;
-            padding: 2rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        .resume-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
         }
 
-        .resume-preview h3 {
-            margin-bottom: 1rem;
-            color: var(--text-primary);
+        .resume-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .resume-buttons .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            min-width: 200px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-2);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .w-5 {
+            width: 1.25rem;
+        }
+
+        .h-5 {
+            height: 1.25rem;
+        }
+
+        .mr-2 {
+            margin-right: 0.5rem;
+        }
+
+        .resume-preview-container {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .preview-wrapper {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg-primary);
+            height: 700px;
+        }
+
+        .resume-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .preview-note {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Contact Section */
@@ -568,6 +652,11 @@
 
             .about-content {
                 grid-template-columns: 1fr;
+            }
+
+            .resume-buttons {
+                flex-direction: column;
+                align-items: center;
             }
 
             .timeline::before {
@@ -784,25 +873,44 @@
     <section id="resume" class="resume">
         <div class="resume-container">
             <h2 class="section-title">Resume</h2>
-            <div class="resume-upload">
-                <div class="upload-icon">📄</div>
-                <p class="upload-text">
-                    Download my resume to learn more about my experience and skills
-                </p>
-                <div class="cta-buttons" style="justify-content: center;">
-                    <a href="#" class="btn btn-primary" id="downloadResume">
-                        <span>Download Resume</span>
-                        <span>↓</span>
-                    </a>
-                    <a href="#" class="btn btn-secondary" id="viewResume">
-                        <span>View Online</span>
-                        <span>👁️</span>
-                    </a>
+
+            <div class="glass-card">
+                <div class="text-center mb-8">
+                    <p class="resume-description">
+                        Download my complete resume to learn more about my experience, education, and technical skills.
+                    </p>
+
+                    <div class="resume-buttons">
+                        <a href="CHANGYEOL IM Resume.pdf" 
+                           download="CHANGYEOL IM Resume.pdf"
+                           class="btn btn-primary">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            Download Resume
+                        </a>
+
+                        <button onclick="toggleResumePreview()" class="btn btn-secondary">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            <span id="preview-button-text">Preview Resume</span>
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="resume-preview" id="resumePreview" style="display: none;">
-                <h3>Resume Preview</h3>
-                <p>Your resume will be displayed here. You can upload your resume file or provide a link to it.</p>
+
+                <div id="resume-preview" class="resume-preview-container">
+                    <div class="preview-wrapper">
+                        <iframe src="CHANGYEOL IM Resume.pdf" 
+                                class="resume-iframe" 
+                                title="Resume Preview">
+                        </iframe>
+                    </div>
+                    <p class="preview-note">
+                        <em>Preview may not display optimally on all devices. Download for best viewing experience.</em>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -872,61 +980,23 @@
             this.reset();
         });
 
-        // Resume download handler
-        document.getElementById('downloadResume').addEventListener('click', function(e) {
-            e.preventDefault();
-            // Create a sample resume text file
-            const resumeContent = `YOUR NAME
-Software Engineer
+        // Toggle resume preview
+        function toggleResumePreview() {
+            const preview = document.getElementById('resume-preview');
+            const buttonText = document.getElementById('preview-button-text');
 
-CONTACT
-Email: your.email@example.com
-Phone: (123) 456-7890
-LinkedIn: linkedin.com/in/yourprofile
-GitHub: github.com/yourusername
-
-SUMMARY
-Passionate software developer with X years of experience in building scalable web applications.
-Expertise in full-stack development, cloud technologies, and modern software engineering practices.
-
-EXPERIENCE
-Senior Software Engineer | Tech Company Inc. | 2023 - Present
-- Led development of microservices architecture
-- Improved system performance by 40%
-- Mentored junior developers
-
-Full Stack Developer | Digital Solutions Ltd. | 2021 - 2023
-- Developed web applications using React and Node.js
-- Increased user engagement by 25%
-- Collaborated with cross-functional teams
-
-EDUCATION
-Bachelor of Science in Computer Science
-University Name | Graduated 2020
-
-SKILLS
-- Languages: JavaScript, Python, SQL
-- Frameworks: React, Node.js, Express
-- Cloud: AWS, Docker, Kubernetes
-- Tools: Git, CI/CD, Agile methodologies`;
-
-            const blob = new Blob([resumeContent], { type: 'text/plain' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'resume.txt';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
-        });
-
-        // Resume view handler
-        document.getElementById('viewResume').addEventListener('click', function(e) {
-            e.preventDefault();
-            const preview = document.getElementById('resumePreview');
-            preview.style.display = preview.style.display === 'none' ? 'block' : 'none';
-        });
+            if (preview.style.display === 'none' || !preview.style.display) {
+                preview.style.display = 'block';
+                buttonText.textContent = 'Hide Preview';
+                // Smooth scroll to preview
+                setTimeout(() => {
+                    preview.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            } else {
+                preview.style.display = 'none';
+                buttonText.textContent = 'Preview Resume';
+            }
+        }
 
         // Add scroll animations
         const observerOptions = {
@@ -966,14 +1036,8 @@ SKILLS
         // Start typing effect when page loads
         window.addEventListener('load', typeWriter);
 
-        // Add parallax effect to hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
+        // Removed parallax effect to prevent hero section from covering content
+        // Resume functionality now uses direct links to PDF file
     </script>
 </body>
 </html>
